@@ -1,0 +1,24 @@
+{
+  "name": "capture",
+  "version": "1.0.0",
+  "description": "Este projeto em Node.js tem como objetivo capturar dados de uma fonte externa e, após o processamento, realizar a exclusão de arquivos específicos do sistema.",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ErickDanielA/Node.js-Data-Capture-Cleanup.git"
+  },
+  "author": "ErickDanielA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErickDanielA/Node.js-Data-Capture-Cleanup/issues"
+  },
+  "homepage": "https://github.com/ErickDanielA/Node.js-Data-Capture-Cleanup#readme",
+  "dependencies": {
+    "puppeteer": "^24.3.0"
+  }
+}
