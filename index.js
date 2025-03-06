@@ -1,4 +1,8 @@
 import puppeteer from 'puppeteer';
+import dotenv from 'dotenv';
+
+//Carrega as váriaveis de arquivos .env
+dotenv.config();
 
 async function abrir_Navegador() {
 
@@ -14,19 +18,30 @@ async function abrir_Navegador() {
 
 }
 
-async function acessar_WP(site, page, user, pass) {
+async function acessar_WP(page) {
+
+
+    // Obtendo credenciais do .env    
+    const login = process.env.USER_LOGIN;
+    const pass = process.env.USER_PASS;
+    const site = process.env.SITE;    
+
+    if (!login || !pass || !site) {
+        console.error("Erro: Credenciais não definidas no arquivo .env");
+        process.exit(1);
+    }
 
     //Vá para o painel administrativo da ETEC PB
     await page.goto(site);
 
     //Preencha o campo user_login
-    await page.locator('#user_login').fill(user);
+    await page.locator('#user_login').fill(login);
 
     //Preenche o campo user_pass
     await page.locator('#user_pass').fill(pass);
 
     //Aperta no botão Acessar
-    // await page.click('input[name="wp-submit"]');
+    await page.click('input[name="wp-submit"]');
 }
 
 async function acessar_post(page, parametro){

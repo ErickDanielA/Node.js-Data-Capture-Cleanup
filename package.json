@@ -20,6 +20,7 @@
   "homepage": "https://github.com/ErickDanielA/Node.js-Data-Capture-Cleanup#readme",
   "dependencies": {
     "capture": "file:",
+    "dotenv": "^16.4.7",
     "puppeteer": "^24.3.0"
   }
 }
